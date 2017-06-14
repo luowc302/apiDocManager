@@ -5,9 +5,9 @@ apiDocManager 一个能够管理api文档，具备api接口测试，通过apiDoc
 #### 基于Laravel5.2框架
 
 #### 演示地址
-````
+
 http://api.luowcweb.com/(http://api.luowcweb.com)
-````
+
 
 #### 安装
 
