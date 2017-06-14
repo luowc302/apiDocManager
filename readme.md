@@ -6,7 +6,7 @@ apiDocManager 一个能够管理api文档，具备api接口测试，通过apiDoc
 
 #### 演示地址
 ````
-http://api.luowcweb.com/
+http://api.luowcweb.com/(http://api.luowcweb.com)
 ````
 
 #### 安装
