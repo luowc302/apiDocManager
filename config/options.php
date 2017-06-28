@@ -61,7 +61,7 @@ return [
         'Apiary模板' => './template/apiary',
     ],
     'contact' => [
-        'Email' => '1453818814@qq.com',
+        'Email' => 'wencailuo@qq.com',
         'words' => '使用过程中任何问题请联系我们！',
     ],
 ];
