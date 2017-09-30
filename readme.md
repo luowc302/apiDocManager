@@ -14,6 +14,7 @@ http://api.luowcweb.com/
 ````
 部署时地址指向项目目录的public目录下，服务器部署完成后，通过
 www.domain.com/install即可完成数据库表创建以及环境的配置，注意数据库需要提前创建
+部分情况下需要清除系统缓存时，windows下执行clearCache.bat，linux平台执行sh clearCache.sh即可
 ````
 
 
