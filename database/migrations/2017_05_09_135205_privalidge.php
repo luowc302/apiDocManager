@@ -7,8 +7,8 @@ class Privalidge extends Migration
 {
     public function up() {
         //
-        if (!Schema::hasTable('Privalidges')) {
-            Schema::create('Privalidges', function (Blueprint $table) {
+        if (!Schema::hasTable('privalidges')) {
+            Schema::create('privalidges', function (Blueprint $table) {
                 $table->increments('id');
                 $table->integer('uid'); //用户id
                 $table->integer('project_id'); //项目id

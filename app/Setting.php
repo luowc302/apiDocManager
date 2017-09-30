@@ -23,7 +23,7 @@ class Setting extends Model {
      */
     public static function insertConfig($param) {
         foreach ($param as $key => $value) {
-            DB::table('Settings')->insert([
+            DB::table('settings')->insert([
                 ['id' => $key, 'name' => $value, 'is_used' => 0],
             ]);
         }

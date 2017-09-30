@@ -7,8 +7,8 @@ class Setting extends Migration
 {
     public function up() {
         //
-        if (!Schema::hasTable('Settings')) {
-            Schema::create('Settings', function (Blueprint $table) {
+        if (!Schema::hasTable('settings')) {
+            Schema::create('settings', function (Blueprint $table) {
                 $table->increments('id');
                 $table->string('name', 50)->unique(); //配置名
                 $table->integer('is_used'); //使用与否 1为使用 0为关闭
