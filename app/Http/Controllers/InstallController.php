@@ -52,18 +52,23 @@ class InstallController extends BaseController {//继承base控制器
      */
     public function doInstall() {
         if (!checkLock()) {
-            $param['user_name'] = Input::get('user_name');
-            $param['password'] = Input::get('password');
-            $this->createTable();
-            Admin::createAdmin($param);
-            Setting::insertConfig(config('options.function'));
-            Template::insertConfig(config('options.template'));
-            $fopen = fopen(config('options.lockFiles'), 'wb '); //新建文件命令 
-            fputs($fopen, ''); //向文件中写入内容; 
-            fclose($fopen);
-            return view('home/install_success');
+            try{
+                $param['user_name'] = Input::get('user_name');
+                $param['password'] = Input::get('password');
+                $this->createTable();
+                Admin::createAdmin($param);
+                Setting::insertConfig(config('options.function'));
+                Template::insertConfig(config('options.template'));
+                $fopen = fopen(config('options.lockFiles'), 'wb '); //新建文件命令
+                fputs($fopen, ''); //向文件中写入内容;
+                fclose($fopen);
+                return view('home/install_success');
+            }
+            catch (\Exception $e){
+                echo '错误，检查你的配置！错误信息：' . $e->getMessage();
+            }
         } else {//如果文件存在则报错
-            echo '错误，已经安装初始化过';
+            echo '错误，已经安装初始化过！';
         }
     }
 
