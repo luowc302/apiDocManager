@@ -54,6 +54,8 @@ function checkLock() {
  * @return boolean TRUE成功 FALSE失败
  */
 function updateEnv($config) {
+    define('IS_WIN',strstr(PHP_OS, 'WIN') ? 1 : 0 );
+    IS_WIN === 1 ? $symbol = "\r\n" : $symbol = "\n";
     $file = config('options.envConfig');
     if (file_exists($file)) {//如果文件存在则无操作
     } else {
@@ -62,7 +64,7 @@ function updateEnv($config) {
             return FALSE;
         }
     }
-    $array = explode("\n", file_get_contents($file));
+    $array = explode($symbol, file_get_contents($file));
     $res = [];
     foreach ($array as $key => $value) {
         if (!empty($value)) {
@@ -79,7 +81,7 @@ function updateEnv($config) {
     }
     $str = '';
     foreach ($res as $key => $value) {
-        $str .= $key . '=' . $value . "\n";
+        $str .= $key . '=' . $value . $symbol;
     }
     $envfile = fopen(config('options.envConfig'), "w") or die("Unable to open file!");
     fwrite($envfile, $str);
