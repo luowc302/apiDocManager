@@ -74,8 +74,7 @@ class InstallController extends BaseController {//继承base控制器
 
     /**
      * 创建系统需要的数据表
-     * @author luowencai 2017/4/13
-     * @return void
+     * @return bool
      */
     public function createTable() {
         \Admin::install();
