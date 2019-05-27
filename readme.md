@@ -4,9 +4,6 @@ apiDocManager 一个能够管理api文档，具备api接口测试，通过apiDoc
 
 #### 基于Laravel5.2框架
 
-#### 演示地址
-
-http://api.luowcweb.com/
 #### 准备
 ````
 部分情况下需要清除系统缓存时，windows下执行clearCache.bat，linux平台执行sh clearCache.sh即可(非必须，但建议)
